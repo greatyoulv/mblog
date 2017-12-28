@@ -8,26 +8,18 @@
 				</h3>
 			</div>
 			<div class="panel-body">
-				 <?php if(count($errors) > 0): ?>
-                 	<div class="alert alert-danger">
-                    	<strong>新增失败</strong> 输入不符合要求<br><br>
-                        <?php echo implode('<br>', $errors->all()); ?>
-
-                    </div>
-                 <?php endif; ?>
 
 				<a href="<?php echo e(url('admin/files/create')); ?>" class="btn btn-lg btn-primary">上传</a>
 
 				<?php $__currentLoopData = $files; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-					<input type="hidden" value="<?php echo e($file = trim($file,'public')); ?>"></input>
 					<hr>
 					<div class="file">
 						<p>
 							<?php echo e($file); ?>
 
 						</p>
-						<a href="<?php echo e(url('storage'.$file)); ?>" class="btn btn-success">查看</a>
-						<form action="<?php echo e(url('admin/files'.$file)); ?>" method="POST" style="display: inline;">
+						<a href="<?php echo e(url('storage/'.$file)); ?>" class="btn btn-success">查看</a>
+						<form action="<?php echo e(url('admin/files/'.$file)); ?>" method="POST" style="display: inline;">
 							<?php echo e(method_field('DELETE')); ?>
 
 							<?php echo e(csrf_field()); ?>

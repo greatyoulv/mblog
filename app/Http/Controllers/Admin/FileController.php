@@ -11,7 +11,8 @@ class FileController extends Controller
     //
 	public function index()
 	{
-		$files = Storage::disk('local')->allFiles('public');
+		$files = Storage::disk('local')->Files('/');
+		#dd($files);
 		return view('admin/file/index')->with("files",$files);
 	}
 
@@ -35,6 +36,9 @@ class FileController extends Controller
                 //$ext = $file->extension();     // 扩展名
                 //$type = $file->getClientMimeType();     // image/jpeg
 				//$realPath = $file->getRealPath();
+				#$path = $file->storeAs('/','1.jpg');
+				
+				#dd($path);
 				//echo "{$realPath}";
 
                 // 上传文件
@@ -42,7 +46,7 @@ class FileController extends Controller
 				//echo "{$filename}";
 				//$file->move('public',$filename);
 			//	$store_result = $file->store('public');
-				Storage::disk('local')->putFile('public', $file);
+				Storage::disk('local')->putFile('/', $file);
 				}
 			}
 			
@@ -53,9 +57,9 @@ class FileController extends Controller
 	public function destroy($fileName)
 	{
 		#$file = $fileName;
-		$file = trim($fileName,'//');
+		#$file = trim($fileName,'//');
 		#$file = 'public'.$file;
-		Storage::disk('public')->delete($file);
+		Storage::disk('local')->delete($fileName);
 		return redirect()->back()->withErrors('删除成功');
 	}
 

@@ -13,7 +13,7 @@
 					<?php echo e(csrf_field()); ?>
 
 
-					<input type="file" class="form-control" name="file">
+					<input type="file" name="file"><br>
 					<button type="submit" class="btn btn-success">提交</button>
 				</form>
 
