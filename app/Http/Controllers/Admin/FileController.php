@@ -33,9 +33,12 @@ class FileController extends Controller
 				{
 
                 // 获取文件相关信息
-                //$ext = $file->extension();     // 扩展名
+                $extension = $file->getClientOriginalExtension();     // 扩展名
                 //$type = $file->getClientMimeType();     // image/jpeg
-				//$realPath = $file->getRealPath();
+				$realPath = $file->getRealPath();
+				#$fileName = date('YmdHis').mt_rand(100,999).'.'.$extension;
+				$fileName = $file->getClientOriginalName();
+				#dd($fileName);
 				#$path = $file->storeAs('/','1.jpg');
 				
 				#dd($path);
@@ -46,7 +49,7 @@ class FileController extends Controller
 				//echo "{$filename}";
 				//$file->move('public',$filename);
 			//	$store_result = $file->store('public');
-				Storage::disk('local')->putFile('/', $file);
+				Storage::disk('local')->putFileAs('/', $file,$fileName);
 				}
 			}
 			
