@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('simplemde/dist/simplemde.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -85,5 +87,18 @@
 
     <!-- Scripts -->
    <script src="{{ asset('js/app.js') }}"></script>
+   <script src="{{ asset('simplemde/dist/simplemde.min.js') }}"></script>
+	
+	<script>
+		var simplemde = new SimpleMDE({
+			element: document.getElementById("fieldTest"),
+			autoDownloadFontAwesome: false,
+			status: false,
+		});
+	</script>
+	<script>
+		var testPlain = simplemde.value();
+		var testMarkdown = simplemde.markdown(testPlain);
+	</script>
 </body>
 </html>

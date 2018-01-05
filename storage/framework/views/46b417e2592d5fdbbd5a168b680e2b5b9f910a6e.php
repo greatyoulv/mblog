@@ -21,7 +21,7 @@
 
                         <input type="text" name="title" class="form-control" required="required" placeholder="请输入标题" value="<?php echo e($article->title); ?>">
                         <br>
-                        <textarea name="body" rows="10" class="form-control" required="required" placeholder="请输入内容"><?php echo e($article->body); ?></textarea>
+                        <textarea name="body" id="fieldTest" rows="10" class="form-control" placeholder="请输入内容"><?php echo e($article->body); ?></textarea>
                         <br>
                         <button class="btn btn-lg btn-info">保存修改</button>
                     </form>

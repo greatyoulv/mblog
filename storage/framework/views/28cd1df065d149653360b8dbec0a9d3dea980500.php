@@ -31,7 +31,7 @@
                         <input type="text" name="website" class="form-control" >
 						<br>
                         <label>Content</label>
-                        <textarea name="content" id="newFormContent" class="form-control" rows="3" required="required"></textarea>
+                        <textarea name="content" id="newFormContent" class="form-control" rows="3" ></textarea>
 						<br>
                     	<button type="submit" class="btn btn-lg btn-success">提交</button>
                 	</form>

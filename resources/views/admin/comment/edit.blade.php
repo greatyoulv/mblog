@@ -28,7 +28,7 @@
                         <input type="text" name="website" class="form-control" required="required" value="{{ $comment->website }}">
                         <br>
                         <label>Content</label>
-                        <textarea name="content" class="form-control" rows="10" required="required">{{ $comment->content }}</textarea>
+                        <textarea name="content" id="fieldTest" class="form-control" rows="10" >{{ $comment->content }}</textarea>
                         <br>
 						<button class="btn btn-lg btn-info">提交修改</button>
 					</form>

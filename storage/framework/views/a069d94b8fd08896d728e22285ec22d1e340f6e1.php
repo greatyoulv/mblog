@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('simplemde/dist/simplemde.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('font-awesome/css/font-awesome.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -87,5 +89,18 @@
 
     <!-- Scripts -->
    <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+   <script src="<?php echo e(asset('simplemde/dist/simplemde.min.js')); ?>"></script>
+	
+	<script>
+		var simplemde = new SimpleMDE({
+			element: document.getElementById("fieldTest"),
+			autoDownloadFontAwesome: false,
+			status: false,
+		});
+	</script>
+	<script>
+		var testPlain = simplemde.value();
+		var testMarkdown = simplemde.markdown(testPlain);
+	</script>
 </body>
 </html>

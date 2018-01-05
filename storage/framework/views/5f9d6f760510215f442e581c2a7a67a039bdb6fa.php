@@ -19,16 +19,17 @@
 
                         <input type="text" name="title" class="form-control" required="required" placeholder="请输入标题">
                         <br>
-                        <textarea name="body" rows="10" class="form-control" required="required" placeholder="请输入内容"></textarea>
+                    	<textarea name="body" class="form-control" id="fieldTest" rows="10" placeholder="请输入内容"></textarea>
                         <br>
                         <button class="btn btn-lg btn-info">新增文章</button>
-                    </form>
+                    </form><br>
 
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('admin.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

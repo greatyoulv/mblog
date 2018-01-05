@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('article/{id}','ArticleController@show');
 Route::post('comment', 'CommentController@store');
 Route::get('mail/send','MailController@send');
+Route::get('simple','SimpleController@index');
 
 Route::get('now',function() {
 	return date("Y-m-d H:i:s");

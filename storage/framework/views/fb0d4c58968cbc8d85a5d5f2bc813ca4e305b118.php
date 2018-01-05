@@ -29,7 +29,7 @@
                         <input type="text" name="website" class="form-control" required="required" value="<?php echo e($comment->website); ?>">
                         <br>
                         <label>Content</label>
-                        <textarea name="content" class="form-control" rows="10" required="required"><?php echo e($comment->content); ?></textarea>
+                        <textarea name="content" id="fieldTest" class="form-control" rows="10" ><?php echo e($comment->content); ?></textarea>
                         <br>
 						<button class="btn btn-lg btn-info">提交修改</button>
 					</form>
