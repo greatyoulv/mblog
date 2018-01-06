@@ -6,13 +6,29 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Article;
+use App\HyperDown\Markdown;
 
 class ArticleController extends Controller
 {
     //
+	protected $markdown;
+	public function __construct(Markdown $markdown)
+	{
+		$this->markdown = $markdown;
+	}
+
 	public function index()
 	{
-		return view('admin/article/index')->with('articles',Article::all());
+		$articles = Article::all();
+		
+		foreach($articles as $k => $article)
+		{
+			$body = $this->markdown->markdown($article->body);
+			$articles[$k]->body = $body;
+		}
+		
+		return view('admin/article/index',compact('articles'));
+		//return view('admin/article/index')->with('articles',Article::all());
 	}
 
 	public function create()

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{ asset('simplemde/dist/simplemde.min.js') }}"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -22,10 +23,12 @@
                     				</a>
                 				</div>
 								<br>
-                				<div class="body">
-                    				<p>{{ $article->body }}</p>
-                				</div>
+								<div>
+										{!! $article->body !!}<br>
+								</div>
 								<hr>
+
+
             				@endforeach
     				</div>
 					

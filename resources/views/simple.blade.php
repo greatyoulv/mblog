@@ -14,8 +14,10 @@
     </head>
     <body>
         <div class="form-group">
-			<textarea name="field" id="fieldTest" cols="30" rows="10"></textarea>
-        </div>
+			<textarea name="field" id="fieldTest" cols="30" rows="10"># aaa</textarea>
+        </div><br>
+		<div id="m2h" class="form-group">
+		</div>
     </body>
 
 	<script src="simplemde/debug/simplemde.js"></script>
@@ -23,7 +25,12 @@
 		 var simplemde = new SimpleMDE({
         element: document.getElementById("fieldTest"),
         autoDownloadFontAwesome: false,
-        status: false
+        status: false,
     });
+	
+		var testPlain = simplemde.value();
+		var testMarkdown = simplemde.markdown(testPlain);
+		var d = document.getElementById('m2h');
+		d.innerHTML = testMarkdown;
 	</script>
 </html>

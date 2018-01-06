@@ -77,15 +77,21 @@
     </div>
 
     <!-- Scripts -->
-   <script src="{{ asset('js/app.js') }}"></script>
-   <script src="{{ asset('simplemde/dist/simplemde.min.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('simplemde/dist/simplemde.min.js') }}"></script>
+<script src="{{ asset('hyperdown/Parser.js') }}"></script>
 	<script>
 		var simplemde = new SimpleMDE({
-			element: document.getElementById("newFormContent"),
+			element: document.getElementById("fieldTest"),
 			autoDownloadFontAwesome: false,
 			status: false,
 		});
+		var testPlain = simplemde.value();
+        var testMarkdown = simplemde.markdown(testPlain);
+        var d = document.getElementById('m2h');
+        	d.innerHTML = testMarkdown;
 
 	</script>
+
 </body>
 </html>

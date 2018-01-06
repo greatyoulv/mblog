@@ -7,8 +7,8 @@
 			<div class="panel-heading">{{ $article->title }}</div>
 				<div class="panel-body">
             		{{ $article->updated_at }}
-            		{{ $article->body }}
-
+            		{!! $article->body !!}
+					<br>
             		@if (count($errors) > 0)
                 		<div class="alert alert-danger">
                     		<strong>操作失败</strong> 输入不符合要求<br><br>

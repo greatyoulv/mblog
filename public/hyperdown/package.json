@@ -1,0 +1,76 @@
+{
+  "_args": [
+    [
+      "hyperdown",
+      "/home/jciot"
+    ]
+  ],
+  "_from": "hyperdown@latest",
+  "_id": "hyperdown@2.3.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/hyperdown",
+  "_nodeVersion": "6.3.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/hyperdown-2.3.1.tgz_1502954076140_0.45302583603188396"
+  },
+  "_npmUser": {
+    "email": "hacker@segmentfault.com",
+    "name": "segmentfault"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "hyperdown",
+    "raw": "hyperdown",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/hyperdown/-/hyperdown-2.3.1.tgz",
+  "_shasum": "6e50521b4636213b8a05bd8679dc105bbbe3a678",
+  "_shrinkwrap": null,
+  "_spec": "hyperdown",
+  "_where": "/home/jciot",
+  "author": {
+    "name": "SegmentFault"
+  },
+  "bugs": {
+    "url": "https://github.com/SegmentFault/HyperDown.js/issues"
+  },
+  "dependencies": {},
+  "description": "Markdown解析器",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "6e50521b4636213b8a05bd8679dc105bbbe3a678",
+    "tarball": "https://registry.npmjs.org/hyperdown/-/hyperdown-2.3.1.tgz"
+  },
+  "gitHead": "400901fccf8179ca14fd90d62f87830d81648293",
+  "homepage": "https://github.com/SegmentFault/HyperDown.js#readme",
+  "license": "BSD-4-Clause",
+  "main": "Parser.js",
+  "maintainers": [
+    {
+      "name": "segmentfault",
+      "email": "hacker@segmentfault.com"
+    }
+  ],
+  "name": "hyperdown",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SegmentFault/HyperDown.js.git"
+  },
+  "scripts": {
+    "build": "cake build",
+    "test": "mocha"
+  },
+  "version": "2.3.1"
+}

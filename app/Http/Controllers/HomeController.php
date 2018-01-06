@@ -1,8 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\HyperDown\Markdown;
+use App\Article;
 
 class HomeController extends Controller
 {
@@ -11,10 +12,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-#    public function __construct()
-#    {
-#        $this->middleware('auth');
-#    }
+	protected $markdown;
+    public function __construct(Markdown $markdown)
+    {
+        $this->markdown = $markdown;
+    }
 
     /**
      * Show the application dashboard.
@@ -23,6 +25,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->with('articles',\App\Article::all());
+		$articles = Article::all();
+
+		foreach($articles as $k => $article)
+		{
+			//$parser = new Markdown;
+			$body =$this->markdown->markdown($article->body);
+			//$body = $parser->makeHtml($article->body);
+			//$body = mb_strcut($body);
+			$articles[$k]->body = $body;
+		}
+
+		return view('home',compact('articles'));
+        //return view('home')->with('articles',\App\Article::all());
     }
 }
+
