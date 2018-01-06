@@ -18,11 +18,23 @@ class ArticleController extends Controller
 	public function show($id)
 	{
 		$article = Article::with('hasManyComments')->find($id);
+/*		foreach($comments as $k => $comment)
+		{
+			$content = $this->markdown->markdown($comment->content);
+			$comments[$k]->content = $content;
+		}
+*/
 		$body = $this->markdown->markdown($article->body);
 		$article->body = $body;
-		return view('article/show',compact('article'));
 
-		//return view('article/show')->withArticle(Article::with('hasManyComments')->find($id));
+		$comments = $article->hasManyComments;
+		foreach($comments as $k => $comment)
+		{
+			$content = $this->markdown->markdown($comment->content);
+			$comments[$k]->content = $content;
+		}
+		return view('article/show',compact('article'));
+//		return view('article/show')->withArticle(Article::with('hasManyComments')->find($id));
 	}
 }
 

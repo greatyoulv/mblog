@@ -86,11 +86,6 @@
 			autoDownloadFontAwesome: false,
 			status: false,
 		});
-		var testPlain = simplemde.value();
-        var testMarkdown = simplemde.markdown(testPlain);
-        var d = document.getElementById('m2h');
-        	d.innerHTML = testMarkdown;
-
 	</script>
 
 </body>

@@ -8,13 +8,29 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 
 use App\Comment;
+use App\HyperDown\Markdown;
 
 class CommentController extends Controller
 {
     //
+	protected $markdown;
+	public function __construct(Markdown $markdown)
+	{
+		$this->markdown = $markdown;
+	}
+
 	public function index()
 	{
-		return view('admin/comment/index')->withComments(Comment::all());
+		$comments = Comment::all();
+		
+		foreach($comments as $k => $comment)
+		{
+			$content = $this->markdown->markdown($comment->content);
+			$comments[$k]->content = $content;
+		}
+
+		return view('admin/comment/index',compact('comments'));
+		//return view('admin/comment/index')->withComments(Comment::all());
 	}
 	
 	public function edit($id)

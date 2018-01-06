@@ -30,7 +30,7 @@ class HomeController extends Controller
 		foreach($articles as $k => $article)
 		{
 			//$parser = new Markdown;
-			$body =$this->markdown->markdown($article->body);
+			$body = $this->markdown->markdown($article->body);
 			//$body = $parser->makeHtml($article->body);
 			//$body = mb_strcut($body);
 			$articles[$k]->body = $body;

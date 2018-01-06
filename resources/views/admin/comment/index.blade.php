@@ -17,7 +17,7 @@
 
 					@foreach ($comments as $comment)
 						<label>评论内容</label><br>
-						{{ $comment->content }}<br><br>
+						{!! $comment->content !!}<br><br>
 						<label>评论用户</label><br>
 						{{ $comment->nickname }}<br>
 						{{ $comment->email }}<br><br>

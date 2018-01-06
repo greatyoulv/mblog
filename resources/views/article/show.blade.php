@@ -15,33 +15,25 @@
                     		{!! implode('<br>', $errors->all()) !!}
                 		</div>
             		@endif
-
+				<div id="new">
                 	<form action="{{ url('comment') }}" method="POST">
                     	{!! csrf_field() !!}
                     	<input type="hidden" name="article_id" value="{{ $article->id }}">
-                        <label>Nickname</label>
+                        <label>昵称</label>
                         <input type="text" name="nickname" class="form-control" required="required">
 						<br>
-                        <label>Email address</label>
+                        <label>邮箱</label>
                         <input type="email" name="email" class="form-control" >
 						<br>
-                        <label>Home page</label>
+                        <label>个人主页</label>
                         <input type="text" name="website" class="form-control" >
 						<br>
-                        <label>Content</label>
-                        <textarea name="content" id="newFormContent" class="form-control" rows="3" ></textarea>
+                        <label>内容</label>
+                        <textarea name="content" id="fieldTest" class="form-control" rows="3" ></textarea>
 						<br>
                     	<button type="submit" class="btn btn-lg btn-success">提交</button>
                 	</form>
-
-            	<script>
-            	function reply(a) {
-              		var nickname = a.parentNode.parentNode.firstChild.nextSibling.getAttribute('data');
-              		var textArea = document.getElementById('newFormContent');
-              		textArea.innerHTML = '@'+nickname+' ';
-            	}
-            	</script>
-				
+				</div>
 				<br>
 
                 @foreach ($article->hasManyComments as $comment)
@@ -58,11 +50,8 @@
                     </div>
                     <div class="content">
                     	<p style="padding: 20px;">
-                        	{{ $comment->content }}
+                        	{!! $comment->content !!}
                         </p>
-                    </div>
-                    <div class="reply">
-                    	<a href="#new" onclick="reply(this);">回复</a>
                     </div>
                 @endforeach
 				</div>
